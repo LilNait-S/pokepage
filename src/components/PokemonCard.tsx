@@ -8,7 +8,7 @@ interface Props {
 }
 
 const PokemonCard = ({ pokeStats }: Props) => {
-  const [onPokemon, setOnPokemon] = useState();
+  const [onPokemon, setOnPokemon] = useState<string>();
 
   const shownPokemon = () => {
     const selectedObject = pokeStats.filter((obj) => obj.name === onPokemon);
@@ -110,7 +110,7 @@ const PokemonCard = ({ pokeStats }: Props) => {
               <p
                 className="items-start w-3/4"
                 onMouseOver={(event) =>
-                  setOnPokemon(event.target.textContent.toLowerCase())
+                  setOnPokemon(event.currentTarget?.textContent?.toLowerCase() || "")
                 }
               >
                 {pokeStats.name.replace(/^./, (str) => str.toUpperCase())}
