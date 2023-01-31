@@ -9,15 +9,6 @@ interface Props {
 
 const PokemonCard = ({ pokeStats }: Props) => {
   const [onPokemon, setOnPokemon] = useState<string>();
-  const [typesPokemons, setTypesPokemons] = useState()
-
-  const type = onPokemon ? "" : "" ? "" : "";
-
-  const typeClassName = false
-    ? "bg-highpink"
-    : false
-    ? "bg-silver"
-    : "bg-footer-gray";
 
   const shownPokemon = () => {
     const selectedObject = pokeStats.filter((obj) => obj.name === onPokemon);
