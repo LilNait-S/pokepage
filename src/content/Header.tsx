@@ -4,6 +4,7 @@ import blob from '../assets/blob.svg'
 import waves from '../assets/wavesOpacity.svg'
 import { CgPokemon } from 'react-icons/cg'
 import { GoTriangleRight } from 'react-icons/go'
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -16,14 +17,14 @@ const Header = () => {
           </h1>
           <p className="text-xl">Tu pokemon favorito a un solo click.</p>
           <div className="flex flex-col sm:flex-row gap-5 items-center">
-            <a
-              href="/pokedex"
+            <Link
+              to="/pokedex"
               className="bg-highpink text-white py-3 px-14 sm:py-5 sm:px-16 rounded-full flex gap-3 items-center text-lg"
             >
               <CgPokemon className="h-full w-8" />
               <hr className="border-2 h-6" />
               Pokedex
-            </a>
+            </Link>
             <button className="border-4 text-highpink w-20 h-20 px-4 py-4 rounded-full">
               <GoTriangleRight className="w-10 h-10" />
             </button>
