@@ -98,6 +98,11 @@ const PokemonCard = ({ pokeStats }: Props) => {
                 w-full  max-h-14 bg-silver px-6 py-2 rounded-full text-base
                 shadow-md group-hover:bg-highpink hover:cursor-pointer 
               group-hover:text-white transition ease-in-out duration-300"
+
+              onMouseOver={(event) => {
+                const e = event.currentTarget.getElementsByTagName("p");
+                setOnPokemon(e[0].innerHTML.toLowerCase())
+              }}
             >
               <img
                 className="max-h-14 h-full"
@@ -109,9 +114,7 @@ const PokemonCard = ({ pokeStats }: Props) => {
               </li>
               <p
                 className="items-start w-3/4"
-                onMouseOver={(event) =>
-                  setOnPokemon(event.currentTarget?.textContent?.toLowerCase() || "")
-                }
+               
               >
                 {pokeStats.name.replace(/^./, (str) => str.toUpperCase())}
               </p>
